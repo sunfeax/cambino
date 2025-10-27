@@ -1,1 +1,92 @@
-<h1>Hi from component Home!</h1>
+<main>
+    <h1>Hi from component Home!</h1>
+    
+    <h3>Interpolación</h3>
+    <ul style="font-size: 30px;">
+        <li>{{name}}</li>
+        <li>Hola, {{name}}!</li>
+        <li>{{'Hola, ' + name!}}</li>
+    </ul>
+    
+    <div>
+        <h3>Atributos</h3>
+        <img
+            src="https://cdns3.eltiempo.es/bc//ydray_hayedo_montegrande__1___1___1_1760347809.jpg"
+            alt="Image of nature"
+            title="{{title}}"
+            [width]="ancho"
+            [height]="altura">
+    </div>
+    
+    <div>
+        <h3>Classes</h3>
+        <div [ngClass]="{error: hasError}">Esto es un error</div>
+        <div [ngClass]="{error: !hasError}">Esto no es un error</div>
+    </div>
+    
+    <div>
+        <h3>Function</h3>
+        <div>Suma de los numeros 2 y 3 es {{suma(2, 3)}}</div><br>
+        <button (click)="cambiarNombre()" type="button">Change name in the elements li</button><br>
+        Nombre 1: <input type="text" (input)="cambiarNombreInput($event)"><br>
+        <h2>Duoble data binding</h2>
+        Nombre 2: <input [value]="name" (input)="cambiarNombreInput($event)"><br>
+        <p>Nombre actual: {{ name }}</p>
+    </div>
+
+    <h1>Control del flujo en la plantilla</h1>
+    <div>
+        <h3>Directiva *ngIf</h3>
+        @if (mostrar) {
+            <h3>Mostrando el contenido111</h3>
+        } @else {
+            <h3>Mostrando el contenido222</h3>
+        }
+
+        <button (click)="flipMostrar()">Flip</button>
+    </div>
+
+    <div>
+        <h3>Directiva *ngFor</h3>
+        <ul>
+            @for (item of items; track item; let i = $index) {
+                <li>{{ i + 1}} - {{ item }}</li>
+            }
+        </ul>
+    </div>
+
+    <div>
+        <h3>Directiva *ngSwitch</h3>
+        @switch(nombre) {
+            @case('Rafa') {
+                <p>Hola Rafa! Eres el administrador.</p>
+            }
+            @case('Ana') {
+                <p>Hola Ana! Eres una usuaria normal.</p>
+            }
+            @default {
+                <p>Hola invitado! No estás registrado.</p>
+            }
+        }
+    </div>
+
+    <div>
+        <h3>Ejemplo de expresiones en la plantilla</h3>
+        <p>Resultado de 10 + 20 = {{ 10 + 20 }}</p>
+        <p>Resultado de 10 * 5 = {{ 10 * 5 }}</p>
+        <p>Resultado de 10 / 2 = {{ 10 / 2 }}</p>
+        <p>Resultado de 10 - 3 = {{ 10 - 3 }}</p>
+        <p>Resultado de 10 % 3 = {{ 10 % 3 }}</p>
+        <p>Resultado de 2 + 3 * 4 = {{ 2 + 3 * 4 }}</p>
+
+        <p>Fecha actual: {{ today | date:'longDate' }}</p>
+        <p>Hora actual: {{ today | date:'shortTime' }}</p>
+        <p>Fecha y hora actual: {{ today | date:'full' }}</p>
+        <p>Fecha personalizada: {{ today | date:'EEEE, MMMM d, y' }}</p>
+        <p>Número formateado1: {{ 1234567.89 | number:'1.2-2' }}</p>
+        <p>Número formateado2: {{ .89 | number:'1.4-6' }}</p>
+        <p>Número formateado2: {{ .891234567891011 | number:'2.8-10' }}</p>
+        <p>Moneda formateada: {{ 1234567.89 | currency:'USD' }}</p>
+        <p>Porcentaje formateado: {{ 0.8534 | percent:'1.2-2' }}</p>
+    </div>
+</main>
