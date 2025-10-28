@@ -1,0 +1,10 @@
+<h1>Hi from component Saludo Enrutado!</h1>
+<a [routerLink]="['/home']">Volver al Home</a><br>
+<a [routerLink]="['/landing']">Ir al Landing</a><br>
+<a [routerLink]="['/ej01']">Ir al Ejercicio 1</a><br>
+
+@if (nombre) {
+    <h2>Te saludo {{ nombre }}</h2>
+} @else {
+    <h2>No me has dicho tu nombre!</h2>
+}

@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './home.html',
   styleUrl: './home.css',
   standalone: true
@@ -11,12 +12,26 @@ import { Component } from '@angular/core';
 
 export class Home {
   
-  constructor() {
+  constructor(public router: Router) {
   
   }
 
-  ngOnInit() {
+  // ngOnInit() {
   
+  // }
+
+  nombreUsuario: string = '';
+
+  cambiarNombreInput(event: any) {
+    this.nombreUsuario = event.target?.value || '';
+  }
+
+  irAlSaludoEnrutado1() {
+    window.location.href = '/saludo_enrutado/' + this.nombreUsuario;
+  }
+
+  irAlSaludoEnrutado2() {
+    this.router.navigate(['saludo_enrutado', this.nombreUsuario]);
   }
 
 }

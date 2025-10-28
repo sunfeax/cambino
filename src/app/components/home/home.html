@@ -1,3 +1,14 @@
 <h1>Hi from component Home!</h1>
-<a href="/landing">Ir al Landing</a><br>
-<a href="/ej01">Ir al Ejercicio 1</a>
+<a [routerLink]="['/landing']">Ir al Landing</a><br>
+<a [routerLink]="['/ej01']">Ir al Ejercicio 1</a><br>
+
+<hr>
+
+<h1>Hola {{ nombreUsuario }}</h1>
+<input type="text" placeholder="Escribe tu nombre" [value]="nombreUsuario" (input)="cambiarNombreInput($event)"><br>
+<ul>
+    <li><a [routerLink]="['/saludo_enrutado']">1. Ir al Saludo Enrutado SIN nombre</a></li>
+    <li><a [routerLink]="['/saludo_enrutado/' + nombreUsuario]">2. Ir al Saludo Enrutado CON nombre escrito en el input</a></li>
+    <li><button (click)="irAlSaludoEnrutado1()">3. Ir al Saludo Enrutado usando método</button></li>
+    <li><button (click)="irAlSaludoEnrutado2()">4. Ir al Saludo Enrutado usando método</button></li>
+</ul>
