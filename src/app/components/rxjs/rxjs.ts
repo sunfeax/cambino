@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { Observable, of } from 'rxjs';
+import { interval, merge, Observable, of, take } from 'rxjs';
 
 class Persona {
   nombre: string = '';
@@ -97,34 +97,24 @@ export class RxJS {
 
   ejemplo05() {
     const contador$: Observable<number> = new Observable<number>((observer) => {
-      console.log('Ejecutando ejemplo 05 de RxJS: emisión de strings'); // Этот console.log запускается при подписке
+      console.log('Ejecutando ejemplo 05 de RxJS: emisión de strings');
 
       let count = 1;
 
-      // Создаем интервал для периодической эмиссии
-      // Примечание: на изображении указано 2000 мс
       const interval = setInterval(() => {
-        // 1. Эмиссия текущего значения
         observer.next(count);
-
-        // 2. Увеличение счетчика
         count++;
 
-        // 3. Условие завершения: если счетчик > 5
         if (count > 5) {
-          clearInterval(interval);  // Остановить таймер
-          observer.complete();      // Завершить поток данных
+          clearInterval(interval);
+          observer.complete();
         }
-      }, 2000); // Интервал в 2 секунды
+      }, 2000);
 
-      // Функция очистки (вызывается при отписке)
       return () => {
         clearInterval(interval);
       };
     });
-
-
-    // --- Подписка на Observable ---
 
     contador$.subscribe({
       next: (numero: number) => {
@@ -137,5 +127,24 @@ export class RxJS {
         console.log('Flujo de datos completado.');
       }
     });
+  }
+
+  ejemplo06() {
+    console.log();
+
+    const interval1$ = interval(1000);
+    const interval2$ = interval(1500);
+
+    const combinado1$ = merge(interval1$, interval2$);
+    const combinado2$ = combinado1$.pipe(take(10))
+
+    combinado2$.subscribe({
+      next: numero => console.log(`Numero recibido: ${numero}`),
+      error: (err) => {
+        console.error('Error al recibir el número:', err,)},
+      complete: () => {
+        console.log('Flujo de datos completado.');
+      }
+    })
   }
 }
