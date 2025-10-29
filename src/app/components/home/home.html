@@ -1,14 +1,80 @@
-<h1>Hi from component Home!</h1>
-<a [routerLink]="['/landing']">Ir al Landing</a><br>
-<a [routerLink]="['/ej01']">Ir al Ejercicio 1</a><br>
-
-<hr>
-
-<h1>Hola {{ nombreUsuario }}</h1>
-<input type="text" placeholder="Escribe tu nombre" [value]="nombreUsuario" (input)="cambiarNombreInput($event)"><br>
-<ul>
-    <li><a [routerLink]="['/saludo_enrutado']">1. Ir al Saludo Enrutado SIN nombre</a></li>
-    <li><a [routerLink]="['/saludo_enrutado/' + nombreUsuario]">2. Ir al Saludo Enrutado CON nombre escrito en el input</a></li>
-    <li><button (click)="irAlSaludoEnrutado1()">3. Ir al Saludo Enrutado usando método</button></li>
-    <li><button (click)="irAlSaludoEnrutado2()">4. Ir al Saludo Enrutado usando método</button></li>
-</ul>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-primary text-white">
+          <h2 class="mb-0">Welcome to the Home Page</h2>
+        </div>
+        <div class="card-body">
+          <p class="card-text">This is your personalized dashboard. Use the navigation below to explore different sections of our application.</p>
+          
+          <div class="row mb-4">
+            <div class="col-md-6">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title">Explore Sections</h5>
+                  <div class="d-grid gap-2">
+                    <a [routerLink]="['/landing']" class="btn btn-outline-primary">Go to Landing</a>
+                    <a [routerLink]="['/rxjs']" class="btn btn-outline-success">RxJS Examples</a>
+                    <a [routerLink]="['/ej01']" class="btn btn-outline-info">Exercise 1</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title">Personalize Your Experience</h5>
+                  <div class="mb-3">
+                    <label for="userName" class="form-label">Enter your name:</label>
+                    <input 
+                      type="text" 
+                      class="form-control" 
+                      id="userName" 
+                      placeholder="Type your name here" 
+                      [value]="nombreUsuario" 
+                      (input)="cambiarNombreInput($event)">
+                  </div>
+                  <p class="mb-0">Hello, <strong>{{ nombreUsuario || 'Guest' }}</strong>!</p>
+                </div>
+              </div>
+            </div>
+          
+          <div class="row">
+            <div class="col-12">
+              <div class="card border-primary">
+                <div class="card-header bg-primary text-white">
+                  <h5 class="mb-0">Navigation Options</h5>
+                </div>
+                <div class="card-body">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                      <a [routerLink]="['/saludo_enrutado']" class="btn btn-outline-secondary w-100 text-start">
+                        1. Greeting Page (without name)
+                      </a>
+                    </li>
+                    <li class="list-group-item">
+                      <a [routerLink]="['/saludo_enrutado/' + nombreUsuario]" class="btn btn-outline-secondary w-100 text-start">
+                        2. Greeting Page (with your name: "{{ nombreUsuario }}")
+                      </a>
+                    </li>
+                    <li class="list-group-item">
+                      <button (click)="irAlSaludoEnrutado1()" class="btn btn-outline-secondary w-100 text-start">
+                        3. Greeting Page (method 1)
+                      </button>
+                    </li>
+                    <li class="list-group-item">
+                      <button (click)="irAlSaludoEnrutado2()" class="btn btn-outline-secondary w-100 text-start">
+                        4. Greeting Page (method 2)
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

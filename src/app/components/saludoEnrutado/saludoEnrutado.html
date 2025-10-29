@@ -1,10 +1,50 @@
-<h1>Hi from component Saludo Enrutado!</h1>
-<a [routerLink]="['/home']">Volver al Home</a><br>
-<a [routerLink]="['/landing']">Ir al Landing</a><br>
-<a [routerLink]="['/ej01']">Ir al Ejercicio 1</a><br>
-
-@if (nombre) {
-    <h2>Te saludo {{ nombre }}</h2>
-} @else {
-    <h2>No me has dicho tu nombre!</h2>
-}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="card shadow-lg border-0">
+        <div class="card-header bg-gradient text-white text-center py-4" style="background: linear-gradient(135deg, #6f42c1, #4c69d4);">
+          <h2 class="mb-0"><i class="bi bi-chat-dots me-2"></i>Greeting Page</h2>
+          <p class="mb-0 opacity-75">Personalized welcome experience</p>
+        </div>
+        <div class="card-body text-center">
+          <div class="mb-4">
+            <div class="avatar mx-auto mb-4" style="width: 120px; height: 120px;">
+              <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center" style="width: 100%; height: 100%;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-person-circle text-primary" viewBox="0 0 16 16">
+                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                  <path fill-rule="evenodd" d="M0 8a8 8 0 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 1.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 8 1"/>
+                </svg>
+              </div>
+            </div>
+            
+            @if (nombre) {
+              <h3 class="display-4 text-primary mb-3">Hello, {{ nombre }}!</h3>
+              <p class="lead">Welcome to our application. We're delighted to have you here.</p>
+            } @else {
+              <h3 class="display-4 text-muted mb-3">Hello, Guest!</h3>
+              <p class="lead">We don't know your name yet, but we're happy to meet you.</p>
+            }
+            
+            <div class="alert alert-info mt-4" role="alert">
+              <i class="bi bi-info-circle me-2"></i>
+              This greeting was personalized based on the URL parameter or previous input.
+            </div>
+          </div>
+          
+          <div class="row mt-5">
+            <div class="col-md-6 mb-3">
+              <a [routerLink]="['/home']" class="btn btn-primary w-100">
+                <i class="bi bi-house me-1"></i> Return Home
+              </a>
+            </div>
+            <div class="col-md-6 mb-3">
+              <a [routerLink]="['/landing']" class="btn btn-outline-primary w-100">
+                <i class="bi bi-globe me-1"></i> Visit Landing
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

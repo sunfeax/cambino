@@ -1,0 +1,16 @@
+/* Home component styles that complement Bootstrap */
+.card {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.btn {
+  transition: all 0.2s;
+}
+
+.list-group-item {
+  padding: 0.75rem 1.25rem;
+}

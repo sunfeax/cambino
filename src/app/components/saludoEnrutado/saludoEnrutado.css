@@ -1,0 +1,19 @@
+/* SaludoEnrutado component styles that complement Bootstrap */
+.card {
+  border-radius: 1rem;
+}
+
+.card-header {
+  border-bottom: none;
+  border-top-left-radius: calc(1rem - 1px);
+  border-top-right-radius: calc(1rem - 1px);
+}
+
+.bg-gradient {
+  background: linear-gradient(135deg, #6f42c1, #4c69d4);
+}
+
+.avatar {
+  margin-left: auto;
+ margin-right: auto;
+}

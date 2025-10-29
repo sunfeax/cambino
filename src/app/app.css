@@ -1,4 +1,6 @@
-* {
-    color: rgb(107, 42, 150);
-    text-shadow: 0px 3px 9px black;
+/* App-wide styles that work with Bootstrap */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+/* Custom styles can be added here while maintaining Bootstrap compatibility */

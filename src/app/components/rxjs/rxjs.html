@@ -1,0 +1,87 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="card shadow-sm">
+        <div class="card-header bg-success text-white">
+          <h2 class="mb-0"><i class="bi bi-lightning-charge me-2"></i>RxJS Examples</h2>
+        </div>
+        <div class="card-body">
+          <p class="card-text">This section demonstrates reactive programming concepts using RxJS in Angular.</p>
+          
+          <div class="row">
+            <div class="col-md-8">
+              <h4 class="mb-3">What is RxJS?</h4>
+              <p>RxJS (Reactive Extensions for JavaScript) is a library for composing asynchronous and event-based programs using observable sequences.</p>
+              <ul class="list-group list-group-flush mb-4">
+                <li class="list-group-item d-flex align-items-start">
+                  <div class="flex-shrink-0 me-3">
+                    <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-diagram-3 text-primary" viewBox="0 0 16 16">
+                        <path d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H14a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0V8h-5v.5a.5 0 0 1-1 0v-1A.5.5 0 0 1 2 7h5.5V6A1.5 1.5 0 0 1 6 4.5zM14 5H2V4h12zm0 3H2v1h10.5a.5.5 0 0 1 0 1H2v1h12z"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="flex-grow-1">
+                    <h5 class="mt-0">Observables</h5>
+                    <p class="mb-0">Streams of data that can be transformed and combined</p>
+                  </div>
+                </li>
+                <li class="list-group-item d-flex align-items-start">
+                  <div class="flex-shrink-0 me-3">
+                    <div class="bg-success bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-repeat text-success" viewBox="0 0 16 16">
+                        <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9"/>
+                        <path fill-rule="evenodd" d="M8 3c-1.555 0-2.94.707-3.857 1.818a.5.5 0 1-.771-.634C4.257 3.226 6.01 2.5 8 2.5c3.13 0 5.744 1.675 6.744 4.5H16c0-.308-.061-.596-.164-.856C14.943 3.19 11.828 1 8 1z"/>
+                        <path d="M1.64 7.674C2.607 9.71 5.417 11.5 8 11.5c1.4 0 2.72-.52 3.62-1.386a.5.5 0 0 1 .766.645C11.296 11.86 9.74 12.5 8 12.5c-3.77 0-6.824-2.083-7.88-5a.5.5 0 0 1 .28-.65z"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="flex-grow-1">
+                    <h5 class="mt-0">Operators</h5>
+                    <p class="mb-0">Functions that transform, filter, or combine observables</p>
+                  </div>
+                </li>
+                <li class="list-group-item d-flex align-items-start">
+                  <div class="flex-shrink-0 me-3">
+                    <div class="bg-info bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-subtract text-info" viewBox="0 0 16 16">
+                        <path d="M0 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2H2a2 2 0 0 1-2-2z"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="flex-grow-1">
+                    <h5 class="mt-0">Subscriptions</h5>
+                    <p class="mb-0">Mechanism to execute Observable and receive notifications</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <div class="card h-100 bg-light">
+                <div class="card-body">
+                  <h5 class="card-title">Quick Navigation</h5>
+                  <div class="d-grid gap-2">
+                    <a [routerLink]="['/home']" class="btn btn-primary">
+                      <i class="bi bi-house me-1"></i> Back to Home
+                    </a>
+                    <a [routerLink]="['/landing']" class="btn btn-outline-primary">
+                      <i class="bi bi-globe me-1"></i> Visit Landing
+                    </a>
+                  </div>
+                  <hr>
+                  <h6 class="card-subtitle mb-2 text-muted">RxJS Benefits</h6>
+                  <ul class="list-unstyled">
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Handles async operations</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Manages event streams</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Reduces callback hell</li>
+                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> Provides error handling</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

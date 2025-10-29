@@ -1,12 +1,39 @@
-<header>
-    <h1>Hello World!</h1>
-    <h2>Bienvenidos al Angular</h2>
-    <h3>La cabecera que ponemos aquí es para toda la app de la app.html</h3>
-</header>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+    <a class="navbar-brand" href="#">Cambino App</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/landing">Landing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/rxjs">RxJS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/saludo">Saludo</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-<!-- la parte obligatorio para que funcionen las rutas Home y Landing --> 
-<router-outlet></router-outlet> 
+<!-- Main content area -->
+<main class="container my-4">
+  <!-- la parte obligatorio para que funcionen las rutas Home y Landing -->
+  <router-outlet></router-outlet>
+</main>
 
-<footer>
-    <h3>El pie de la app.html es para toda la app</h3>
+<footer class="bg-light text-dark py-4 mt-5">
+  <div class="container">
+    <div class="text-center">
+      <h5>Cambino App</h5>
+      <p class="mb-0">© 2025 - Beautiful Angular Application with Bootstrap</p>
+    </div>
+  </div>
 </footer>
