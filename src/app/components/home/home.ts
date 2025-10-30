@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
+import { RandomService } from '../../services/random';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,7 @@ import { Router, RouterModule } from '@angular/router';
 
 export class Home {
   
-  constructor(public router: Router) {
+  constructor(public router: Router, public randomService: RandomService) {
   
   }
 
@@ -21,6 +22,7 @@ export class Home {
   // }
 
   nombreUsuario: string = '';
+  randomNum: number = 0;
 
   cambiarNombreInput(event: any) {
     this.nombreUsuario = event.target?.value || '';
@@ -32,6 +34,10 @@ export class Home {
 
   irAlSaludoEnrutado2() {
     this.router.navigate(['saludo_enrutado', this.nombreUsuario]);
+  }
+
+  getRandomNum() {
+    this.randomNum = this.randomService.getRandomInt(1, 100);
   }
 
 }

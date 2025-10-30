@@ -4,7 +4,7 @@ import { Landing } from './components/landing/landing';
 import { Ej01clase } from './components/ej01clase/ej01clase';
 import { SaludoEnrutado } from './components/saludoEnrutado/saludoEnrutado';
 import { RxJS } from './components/rxjs/rxjs';
-import { Padre } from './padre/padre';
+import { Padre } from './components/padre/padre';
 
 // aquí añadimos nombres y asignamos componento de las rutas (p.e.: localhost:4200/home
 export const routes: Routes = [
