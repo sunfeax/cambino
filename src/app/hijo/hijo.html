@@ -1,0 +1,11 @@
+<h2>Soy hijo y mensaje del padre fue: </h2>
+<h3>{{ mensajeDelHijoComponent }}</h3>
+
+<h4>Mi mensaje a padre es:</h4>
+<label for="respuestaAlPadre">Escribe algo para respostar al padre</label>
+<input 
+    type="text" 
+    class="form-control"
+    id="respuestaAlPadre"
+    [value]="respuestaAlPadreValue"
+    (input)="enviarRespuesta($event.target.value)">

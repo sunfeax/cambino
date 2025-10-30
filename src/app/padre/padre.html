@@ -1,1 +1,15 @@
-<p>padre works!</p>
+<label for="mensaje">Escribe algo para mi hijo</label>
+<input 
+    type="text" 
+    class="form-control" 
+    id="mensaje" 
+    [value]="mensajeDelPadreComponent" 
+    (input)="enviar($event.target.value)">
+
+<h1>Soy padre y mi mensaje para hijo es: {{ mensajeDelPadreComponent }}</h1>
+
+<!-- en [ ] está variable del @Input de hijo.ts -->
+<!-- en " " está variable que enviamos del padre.ts -->
+<app-hijo [mensajeDelHijoComponent]="mensajeDelPadreComponent" (respuestaAlPadre)="respuestaDelHijo=$event"></app-hijo>
+
+<h2>Mensaje del hijo es: {{ respuestaDelHijo }}</h2>
