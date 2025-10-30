@@ -11,3 +11,9 @@
 .bi {
   vertical-align: -0.15em;
 }
+
+#area {
+  width: 70%;
+  height: 200px;
+  background-color: rgb(161, 103, 163);
+}

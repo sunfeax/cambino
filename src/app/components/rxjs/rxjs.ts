@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { BehaviorSubject, filter, interval, map, merge, Observable, of, Subject, take } from 'rxjs';
+import { BehaviorSubject, filter, from, interval, map, merge, Observable, of, Subject, switchMap, take } from 'rxjs';
 
 class Persona {
   nombre: string = '';
@@ -25,7 +25,7 @@ export class RxJS {
     { nombre: 'Maria', edad: 48 },
   ];
 
-  nombres$: Observable<Persona[]> = of(this.listadoPersonas);
+  nombres$: Observable<Persona[]> = of(this.listadoPersonas); // of: simple stream de datos de la lista
   private numero$: Observable<number> = of(777);
 
   ejemplo01() {
@@ -175,9 +175,9 @@ export class RxJS {
 
     const combinado1$ = merge(interval1$, interval2$);
     const combinado2$ = combinado1$.pipe(
-      take(20),
-      filter(num => num % 2 == 0),
-      map(num => num * 10)
+      take(20), // primeros 20 numeros 
+      filter(num => num % 2 === 0),  // solo pares
+      map(num => num * 10)  // map: para transformar el resultado (en este caso multiplicamos por 10)
     )
 
     combinado2$.subscribe({
@@ -274,4 +274,27 @@ export class RxJS {
 
     subject.complete();
   }
+
+
+  ejemplo12() {
+    // from transforma Promise con un array en Observable
+    const data$ = from(fetch('https://jsonplaceholder.typicode.com/users')) 
+    .pipe(
+      switchMap(response => response.json()) // switchMap transforma respuesta em fromato JSON
+    );
+  
+    data$.subscribe({
+      next: data => console.log('Datos:', data),
+      error: err => console.error('Error:', err),
+      complete: () => console.log('Listo!')
+    });
+  }
+
+  // const area = document.getElementById('area')!;
+
+  // fromEvent(area, 'click').pipe(
+  //   bufferTime(250),            // собираем клики за 250 мс
+  //   map(clicks => clicks.length),
+  //   filter(count => count >= 2) // 2 и больше → даблклик
+  // ).subscribe(() => console.log('Double click!'));
 }
