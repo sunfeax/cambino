@@ -1,10 +1,5 @@
-/* Home component styles that complement Bootstrap */
 .card {
   transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.card:hover {
-  transform: translateY(-2px);
 }
 
 .btn {

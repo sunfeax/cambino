@@ -1,39 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <div class="container">
-    <a class="navbar-brand" href="#">Cambino App</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/landing">Landing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/rxjs">RxJS</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/saludo">Saludo</a>
-        </li>
-      </ul>
-    </div> 
-  </div>
-</nav>
+<app-header></app-header>
 
-<!-- Main content area -->
 <main class="container my-4">
-  <!-- la parte obligatorio para que funcionen las rutas Home y Landing -->
+  <!-- la parte obligatorio para que funcionen las rutas -->
   <router-outlet></router-outlet>
 </main>
 
-<footer class="bg-light text-dark py-4 mt-5">
-  <div class="container">
-    <div class="text-center">
-      <h5>Cambino App</h5>
-      <p class="mb-0">© 2025 - Beautiful Angular Application with Bootstrap</p>
-    </div>
-  </div>
-</footer>
+<app-footer></app-footer>
