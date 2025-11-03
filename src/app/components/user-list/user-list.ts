@@ -14,17 +14,20 @@ export class UserList {
 
   users: User[] = [];
 
-  constructor(public JSONPlHoldService: JSONPlaceHolderService) {
+  constructor(private JSONPlHoldService: JSONPlaceHolderService) {
   }
   
   ngOnInit() {
     this.getUserList();
   }
 
+  showData(user: User) {
+    console.log(user);
+  }
+
   getUserList() {
     this.JSONPlHoldService.getAllUsers().subscribe(users => {
       this.users = users;
-      console.log(users);
     });
   }
 }

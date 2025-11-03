@@ -1,9 +1,8 @@
 <h3>Users:</h3>
-<ul>
+<div>
     @for (user of users; track user.id) {
-        <li>
-            <span style="margin-right: 20px;">{{ user.name }}</span>
-            <span>{{ user.email }}</span>
-        </li>
+        <p>{{ user.name }}</p>
+        <button type="button" (click)="showData(user)">Ver datos</button>
+        <hr>
     }
-</ul>
+</div>
