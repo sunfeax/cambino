@@ -5,6 +5,7 @@ import { Ej01clase } from './components/ej01clase/ej01clase';
 import { SaludoEnrutado } from './components/saludoEnrutado/saludoEnrutado';
 import { RxJS } from './components/rxjs/rxjs';
 import { Padre } from './components/padre/padre';
+import { UserList } from './components/user-list/user-list';
 
 // aquí añadimos nombres y asignamos componento de las rutas (p.e.: localhost:4200/home
 export const routes: Routes = [
@@ -15,6 +16,7 @@ export const routes: Routes = [
     {path: 'saludo_enrutado/:nombre', component: SaludoEnrutado},
     {path: 'rxjs', component: RxJS},
     {path: 'padre', component: Padre},
+    {path: 'user_list', component: UserList},
 
     {path: '', component: Home}, // ruta por defecto
     {path: '**', redirectTo: 'home'}, // redirigir cualquier otra ruta a home

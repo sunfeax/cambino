@@ -1,26 +1,47 @@
 <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <div class="container">
-        <a class="navbar-brand" href="#">Cambino App</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/landing">Landing</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/rxjs">RxJS</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/saludo">Saludo</a>
-            </li>
-          </ul>
-        </div> 
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+          <a class="navbar-brand" href="">Cambino</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                      <a class="nav-link" [class.active]="activaRoute === '/' || activaRoute === '/home'" aria-current="page" href="/">Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" [class.active]="activaRoute === '/ej01'" aria-current="page" href="ej01">Primer ejercicio</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" [class.active]="activaRoute === '/landing'" aria-current="page" href="landing">Página de landing</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" [class.active]="activaRoute === '/saludo_enrutado'" aria-current="page" href="saludo_enrutado">Saludo enrutado</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" [class.active]="activaRoute === '/rxjs'" aria-current="page" href="rxjs">RxJs</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" [class.active]="activaRoute === '/user_list'" aria-current="page" href="user_list">User List</a>
+                  </li>
+                  <!-- <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                          aria-expanded="false">
+                          Ejercicios
+                      </a>
+                      <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" [class.active]="activaRoute === '/ej01'" href="ej01">Primero</a></li>
+                          <li><a class="dropdown-item" [class.active]="activaRoute === '/landing'" href="landing">Landing</a></li>
+                          <li>
+                              <hr class="dropdown-divider">
+                          </li>
+                          <li><a class="dropdown-item" [class.active]="activaRoute === '/'" href="#">Something else here</a></li>
+                      </ul>
+                  </li> -->
+              </ul>
+          </div>
       </div>
-    </nav>
+  </nav>
 </header>
