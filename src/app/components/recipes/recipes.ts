@@ -14,14 +14,14 @@ import { RecipeService } from '../../services/recipeService';
 export class Recipes {
   recipes: Recipe[] = [];
   selectedRecipe: Recipe | null = null;
-  isLoading = false;
-  errorMessage: string | null = null;
 
   constructor(private recipeService: RecipeService) {
   }
   
   ngOnInit() {
-    this.getRecipeList();
+    this.recipeService.getAllRecipes().subscribe((recipes) => {
+      this.recipes = recipes;
+    });
   }
 
   showData(recipe: Recipe) {
@@ -31,21 +31,5 @@ export class Recipes {
 
   clearSelectedRecipe() {
     this.selectedRecipe = null;
-  }
-
-  getRecipeList() {
-    this.isLoading = true;
-    this.errorMessage = null;
-
-    this.recipeService.getAllRecipes().subscribe({
-      next: (recipes) => {
-        this.recipes = recipes;
-        this.isLoading = false;
-      },
-      error: () => {
-        this.errorMessage = 'No se pudieron obtener las recetas. Inténtalo de nuevo.';
-        this.isLoading = false;
-      }
-    });
   }
 }

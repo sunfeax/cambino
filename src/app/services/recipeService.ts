@@ -8,8 +8,8 @@ import { Recipe, RecipeListResponse } from '../models/recipes';
 })
 
 export class RecipeService {
-    constructor(private httpClient: HttpClient) {
-    }
+  constructor(private httpClient: HttpClient) {
+  }
 
   getAllRecipes(): Observable<Recipe[]> {
     return this.httpClient
