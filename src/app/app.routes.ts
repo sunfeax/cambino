@@ -6,6 +6,7 @@ import { SaludoEnrutado } from './components/saludoEnrutado/saludoEnrutado';
 import { RxJS } from './components/rxjs/rxjs';
 import { Padre } from './components/padre/padre';
 import { UserList } from './components/user-list/user-list';
+import { Recipes } from './components/recipes/recipes';
 
 // aquí añadimos nombres y asignamos componento de las rutas (p.e.: localhost:4200/home
 export const routes: Routes = [
@@ -17,6 +18,7 @@ export const routes: Routes = [
     {path: 'rxjs', component: RxJS},
     {path: 'padre', component: Padre},
     {path: 'user_list', component: UserList},
+    {path: 'recipes', component: Recipes},
 
     {path: '', component: Home}, // ruta por defecto
     {path: '**', redirectTo: 'home'}, // redirigir cualquier otra ruta a home
