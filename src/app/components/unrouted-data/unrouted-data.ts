@@ -7,13 +7,13 @@ import { User } from '../../models/userInterface';
   imports: [],
   templateUrl: './unrouted-data.html',
   styleUrl: './unrouted-data.css',
+  standalone: true
 })
 export class UnroutedData {
   data = inject(MAT_DIALOG_DATA);
   oUsuario: User = {} as User;
 
   ngOnInit() {
-    console.log("Datos recibidos en el hijo en el diálogo:", this.data);
     this.oUsuario = this.data.usuario;
   }
 }

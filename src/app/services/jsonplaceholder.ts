@@ -4,15 +4,19 @@ import { Observable } from 'rxjs';
 import { User } from '../models/userInterface';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 
 export class JSONPlaceHolderService {
-    constructor(private httpClient: HttpClient) {
-    }
+  constructor(private httpClient: HttpClient) {
+  }
 
   getAllUsers(): Observable<User[]> {
     return this.httpClient.get<User[]>('https://jsonplaceholder.typicode.com/users');
+  }
+
+  getUser(id: number): Observable<User> {
+    return this.httpClient.get<User>(`https://jsonplaceholder.typicode.com/users/${id}`);
   }
 
 }

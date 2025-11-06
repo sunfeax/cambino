@@ -3,6 +3,7 @@
     @for (user of users; track user.id) {
         <p>{{ user.name }}</p>
         <button type="button" (click)="showData(user)">Ver datos</button>
+        <button (click)="verDatosUsuario2(user)">Ver datos de usuario pasando sólo el ID</button>
         <hr>
     }
 </div>
