@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject, Inject } from '@angular/core';
 import { JSONPlaceHolderService } from '../../services/jsonplaceholder';
 import { User } from '../../models/userInterface';
+import { MatDialog } from '@angular/material/dialog';
+import { UnroutedData } from '../unrouted-data/unrouted-data';
 
 @Component({
   selector: 'app-user-list',
@@ -13,16 +15,23 @@ import { User } from '../../models/userInterface';
 export class UserList {
 
   users: User[] = [];
+  readonly dialog = inject(MatDialog);
 
   constructor(private JSONPlHoldService: JSONPlaceHolderService) {
   }
-  
+
   ngOnInit() {
     this.getUserList();
   }
 
   showData(user: User) {
-    console.log(user);
+    this.dialog.open(UnroutedData, {
+      width: '600px',
+      height: '400px',
+      data: {
+        usuario: user,
+      }
+    })
   }
 
   getUserList() {

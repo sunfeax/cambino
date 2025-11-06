@@ -17,7 +17,7 @@ export class Recipes {
 
   constructor(private recipeService: RecipeService) {
   }
-  
+
   ngOnInit() {
     this.recipeService.getAllRecipes().subscribe((recipes) => {
       this.recipes = recipes;
@@ -26,7 +26,6 @@ export class Recipes {
 
   showData(recipe: Recipe) {
     this.selectedRecipe = recipe;
-    console.log(recipe);
   }
 
   clearSelectedRecipe() {
